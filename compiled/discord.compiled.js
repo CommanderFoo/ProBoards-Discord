@@ -119,6 +119,11 @@ var ProBoards_Discord = function () {
 				var $online = $info.find("tr:first-child").next();
 
 				$online.empty().attr("id", "discord-online").html("No users online.");
+
+				if ($info.find("tr").length == 3) {
+					$info.find("tr:last-child").remove();
+				}
+
 				$last_row.parent().append($new_last_row);
 
 				return true;
